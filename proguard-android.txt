@@ -1,0 +1,63 @@
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-verbose
+-dontoptimize
+-dontpreverify
+-keepattributes *Annotation*
+-keepattributes SourceFile,LineNumberTable
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
+
+-keepclassmembers public class * extends android.view.View {
+   void set*(***);
+   *** get*();
+}
+
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+-keep class * implements android.os.Parcelable {
+  public static final android.os.Parcelable$Creator *;
+}
+
+-keepclassmembers class **.R$* {
+    public static <fields>;
+}
+
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+
+-dontwarn android.support.**
+-dontwarn oauth.signpost.signature.**
+-dontwarn android.net.http.**
+
+-keep public class * extends android.support.v4.*
+-keep public class com.ideaheap.io.* { *; }
+
+-keepattributes Signature
+
+-libraryjars ./android_kktoolkit/libs/android-support-v4.jar
+-libraryjars ./android_kktoolkit/libs/httpmime-4.3.1.jar
+-libraryjars ./appcompat_v7/libs/android-support-v7-appcompat.jar
+
+
+-dontwarn android.support.v7-appcompat.**
+-dontwarn android.support.v4.**
+-dontwarn org.apache.http.entity.mime.**
+
+-keep class android.support.v7-appcompat.** { *; }
+-keep class android.support.v4.** { *; }
+-keep class org.apache.http.entity.mime.** { *; }
+-keep class com.kkbox.toolkit.** { *; }
