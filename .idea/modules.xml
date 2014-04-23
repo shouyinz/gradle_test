@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/GradleTest.iml" filepath="$PROJECT_DIR$/GradleTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/android_kktoolkit/android_kktoolkit.iml" filepath="$PROJECT_DIR$/android_kktoolkit/android_kktoolkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" filepath="$PROJECT_DIR$/appcompat_v7/appcompat_v7.iml" />
     </modules>
   </component>
 </project>

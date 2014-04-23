@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/justintsai/projects/GradleTest/appcompat_v7/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Users/justintsai/projects/GradleTest/appcompat_v7/src/release/assets" />
+    </dataSet>
+
+</merger>

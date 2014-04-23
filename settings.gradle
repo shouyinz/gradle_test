@@ -1,1 +1,1 @@
-include ':app',':android_kktoolkit'
+include ':app',':android_kktoolkit',':appcompat_v7'
