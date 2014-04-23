@@ -1,0 +1,3 @@
+[submodule "android_kktoolkit"]
+	path = android_kktoolkit
+	url = git@github.com:KKBOX/android_kktoolkit.git
