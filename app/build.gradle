@@ -13,28 +13,28 @@ android {
         versionName "1.0"
     }
 
-    buildTypes {
-
-        debug {
-            debuggable = true
-            runProguard false
-            signingConfig signingConfin.config
-        }
-
-        release {
-            debuggable = false
-            runProguard true
-            signingConfig signingConfin.config
-            proguardFile = ':app/proguard-android.txt'
-        }
-    }
-
     signingConfigs {
         config {
             storeFile file("gradleTest.jks")
             storePassword "gradle"
             keyAlias "gradle"
             keyPassword "gradle"
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable = true
+            runProguard false
+            signingConfig signingConfigs.config
+        }
+
+        release {
+            debuggable = false
+            runProguard true
+            signingConfig signingConfigs.config
+            proguardFile = ':app/proguard-android.txt'
         }
     }
 
