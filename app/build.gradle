@@ -1,5 +1,3 @@
-import java.text.SimpleDateFormat
-
 apply plugin: 'android'
 
 android {
@@ -40,6 +38,11 @@ android {
 
 }
 
+task beforeBuilding << {
+    delete fileTree(dir: ':app/build/apk', include: ['*.apk'])
+}
+build.dependsOn beforeBuilding
+
 android.applicationVariants.all { variant ->
     def date = new Date()
     def apkName = "gradleTest";
@@ -55,8 +58,6 @@ android.applicationVariants.all { variant ->
     }
 
 }
-
-
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
