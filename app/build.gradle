@@ -41,7 +41,7 @@ android {
 task beforeBuilding << {
     delete fileTree(dir: ':app/build/apk', include: ['*.apk'])
 }
-build.dependsOn beforeBuilding
+clean.dependsOn beforeBuilding
 
 android.applicationVariants.all { variant ->
     def date = new Date()
