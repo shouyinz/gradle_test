@@ -57,6 +57,7 @@
 -dontwarn android.support.v4.**
 -dontwarn org.apache.http.entity.mime.**
 
+-keep class org.apache.http.entity.mime.** { *; }
 -keep class android.support.v7-appcompat.** { *; }
 -keep class android.support.v4.** { *; }
 -keep class org.apache.http.entity.mime.** { *; }
