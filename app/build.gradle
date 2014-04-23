@@ -18,12 +18,23 @@ android {
         debug {
             debuggable = true
             runProguard false
+            signingConfig signingConfin.config
         }
 
         release {
             debuggable = false
             runProguard true
-            proguardFiles getDefaultProguardFile(project.path + '/app/proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfin.config
+            proguardFile = ':app/proguard-android.txt'
+        }
+    }
+
+    signingConfigs {
+        config {
+            storeFile file("gradleTest.jks")
+            storePassword "gradle"
+            keyAlias "gradle"
+            keyPassword "gradle"
         }
     }
 
