@@ -18,13 +18,12 @@ android {
         debug {
             debuggable = true
             runProguard false
-            proguardFiles getDefaultProguardFile('./app/proguard-android.txt'), 'proguard-rules.txt'
-        }
+        }g
 
         release {
             debuggable = false
             runProguard true
-            proguardFiles getDefaultProguardFile('./app/proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile(project.path + '/app/proguard-android.txt'), 'proguard-rules.txt'
         }
     }
 
