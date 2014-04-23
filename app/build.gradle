@@ -32,7 +32,7 @@ android {
 
         release {
             debuggable = false
-            runProguard true
+            runProguard false
             signingConfig signingConfigs.config
             proguardFile = ':app/proguard-android.txt'
         }
