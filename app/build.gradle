@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'android'
 
 android {
@@ -10,13 +12,39 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
-        release {
+
+        debug {
+            debuggable = true
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+
+        release {
+            debuggable = false
+            runProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
     }
+
 }
+
+android.applicationVariants.all { variant ->
+    def date = new Date()
+    def variants = variant.baseName.split("-");
+    def apkName = "gradleTest-";
+    apkName += variants[0];
+    apkName += date.format('yyyy/MM/dd/HH:mm:ss')
+    if (variant.buildType.name == "release") {
+        apkName += "-RELEASE.apk";
+    } else {
+        apkName += "-DEBUG.apk";
+    }
+    variant.outputFile = file("$project.buildDir/apk/" + apkName)
+}
+
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
