@@ -15,7 +15,7 @@ android {
 
     signingConfigs {
         config {
-            storeFile file("gradleTest.jks")
+            storeFile file("../gradleTest.jks")
             storePassword "gradle"
             keyAlias "gradle"
             keyPassword "gradle"
