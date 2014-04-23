@@ -32,16 +32,18 @@ android {
 
 android.applicationVariants.all { variant ->
     def date = new Date()
-    def variants = variant.baseName.split("-");
-    def apkName = "gradleTest-";
-    apkName += variants[0];
-    apkName += date.format('yyyy/MM/dd/HH:mm:ss')
+    def apkName = "gradleTest";
+    apkName += "-" + date.format('yyyy-MM-dd-HH:mm:ss')
     if (variant.buildType.name == "release") {
-        apkName += "-RELEASE.apk";
+        apkName += "-release.apk";
     } else {
-        apkName += "-DEBUG.apk";
+        apkName += "-debug.apk";
     }
-    variant.outputFile = file("$project.buildDir/apk/" + apkName)
+    def file = variant.outputFile
+    if (file != null) {
+        file = new File(file.parent, file.name.replace(".apk", apkName))
+    }
+
 }
 
 
