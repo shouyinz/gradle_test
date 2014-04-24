@@ -23,17 +23,17 @@ android {
     buildTypes {
 
         debug {
-            debuggable = true
+            debuggable true
             runProguard false
             signingConfig signingConfigs.config
         }
 
         release {
-            debuggable = false
+            debuggable false
             //FIXME: Proguard will fail with toolkit
-            runProguard false
+            runProguard true
             signingConfig signingConfigs.config
-            proguardFile = ':app/proguard-android.txt'
+            proguardFile 'proguard-android.txt'
         }
     }
 
