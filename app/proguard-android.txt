@@ -39,26 +39,17 @@
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
 
--dontwarn android.support.**
--dontwarn oauth.signpost.signature.**
--dontwarn android.net.http.**
-
--keep public class * extends android.support.v4.*
--keep public class com.ideaheap.io.* { *; }
-
 -keepattributes Signature
 
 -libraryjars ./android_kktoolkit/libs/android-support-v4.jar
 -libraryjars ./android_kktoolkit/libs/httpmime-4.3.1.jar
 -libraryjars ./appcompat_v7/libs/android-support-v7-appcompat.jar
 
-
--dontwarn android.support.v7-appcompat.**
--dontwarn android.support.v4.**
+-dontwarn android.support.**
 -dontwarn org.apache.http.entity.mime.**
+-dontwarn com.kkbox.toolkit.**
 
--keep class org.apache.http.entity.mime.** { *; }
--keep class android.support.v7-appcompat.** { *; }
--keep class android.support.v4.** { *; }
+-keep public class * extends android.support.**
+-keep class android.support.** { *; }
 -keep class org.apache.http.entity.mime.** { *; }
 -keep class com.kkbox.toolkit.** { *; }

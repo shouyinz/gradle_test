@@ -30,6 +30,7 @@ android {
 
         release {
             debuggable = false
+            //FIXME: Proguard will fail with toolkit
             runProguard false
             signingConfig signingConfigs.config
             proguardFile = ':app/proguard-android.txt'
@@ -38,25 +39,18 @@ android {
 
 }
 
-task beforeBuilding << {
-    delete fileTree(dir: ':app/build/apk', include: ['*.apk'])
-}
-clean.dependsOn beforeBuilding
-
 android.applicationVariants.all { variant ->
     def date = new Date()
     def apkName = "gradleTest";
-    apkName += "-" + date.format('yyyy-MM-dd-HH:mm:ss')
+    apkName += "_" + date.format('yyyy/MM/dd_HH_mm_ss')
     if (variant.buildType.name == "release") {
-        apkName += "-release.apk";
+        apkName += "_release.apk";
     } else {
-        apkName += "-debug.apk";
-    }
-    def file = variant.outputFile
-    if (file != null) {
-        file = new File(file.parent, file.name.replace(".apk", apkName))
+        apkName += "_debug.apk";
     }
 
+    def file = variant.packageApplication.outputFile
+    variant.packageApplication.outputFile = new File(file.parent, apkName)
 }
 
 dependencies {
