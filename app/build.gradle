@@ -42,7 +42,7 @@ android {
 android.applicationVariants.all { variant ->
     def date = new Date()
     def apkName = "gradleTest";
-    apkName += "_" + date.format('yyyy_MM_dd_HH_mm_ss')
+    apkName += "_" + date.format('yyyy.MM.dd_HH.mm')
     if (variant.buildType.name == "release") {
         apkName += "_release.apk";
     } else {
